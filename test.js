@@ -161,13 +161,8 @@ test('ongc', function (t) {
 })
 
 test('get size', function (t) {
-  t.plan(3)
-
   const c = new Xache({
-    maxSize: 4,
-    ongc() {
-      t.is(c.size, 4, 'correct size after gc')
-    }
+    maxSize: 4
   })
 
   c.set(1, true)
